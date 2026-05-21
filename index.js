@@ -1,7 +1,7 @@
-const { 
-    Client, 
-    GatewayIntentBits, 
-    EmbedBuilder 
+const {
+    Client,
+    GatewayIntentBits,
+    EmbedBuilder
 } = require('discord.js');
 
 const client = new Client({
@@ -18,17 +18,17 @@ client.once('ready', () => {
 });
 
 // Commands
-client.on('messageCreate', async message => {
+client.on('messageCreate', async (message) => {
 
     // Ignore bots
     if (message.author.bot) return;
 
-    // !ping command
+    // Ping Command
     if (message.content === '!ping') {
         message.reply('Pong!');
     }
 
-    // !prices command
+    // Prices Command
     if (message.content === '!prices') {
 
         const pricesEmbed = new EmbedBuilder()
@@ -38,10 +38,10 @@ client.on('messageCreate', async message => {
                 { name: 'Clothing', value: '$5', inline: true },
                 { name: 'Custom Tattoos', value: '$20+', inline: true },
                 { name: 'Premade Tattoos', value: '$15+', inline: true },
-                { name: 'Custom Skins', value: '$20', inline: true },
-                { name: 'Premade Skins', value: '$15', inline: true },
+                { name: 'Custom Skins', value: '$20+', inline: true },
+                { name: 'Premade Skins', value: '$15+', inline: true },
                 { name: 'Buy Out Premades', value: '$20+', inline: true },
-                { name: 'Addons', value: '$5', inline: true },
+                { name: 'Addons', value: '$5+', inline: true },
                 { name: 'Membership', value: '$25+', inline: true },
                 { name: 'Stables', value: '$10+', inline: true },
                 { name: 'Ramps', value: '$10+', inline: true }
