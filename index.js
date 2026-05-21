@@ -3,7 +3,6 @@ const {
     GatewayIntentBits, 
     EmbedBuilder 
 } = require('discord.js');
-client.login(process.env.TOKEN);
 
 const client = new Client({
     intents: [
